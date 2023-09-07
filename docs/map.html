@@ -91,8 +91,8 @@
 	};
 
 	info.update = function (props) {
-		const contents = props ? `Unit peak discharge (historical, 2001-2020): ${props.peak_area_ratio_original}<br />Unit peak dicharge (counterfactual): ${props.peak_area_ratio_highest}<br />Counterfactual event ID: ${props.highest_peak_event}` : 'Hover over a catchment';
-		this._div.innerHTML = `<h4>Simulated peak discharge per unit area (m<sup>3</sup>/s/km<sup>2</sup>)</h4>${contents}`;
+		const contents = props ? `Unit peak discharge (historical, 2001-2021): ${props.peak_area_ratio_original}<br />Unit peak dicharge (counterfactual): ${props.peak_area_ratio_highest}<br />Counterfactual event ID: ${props.highest_peak_event}` : 'Hover over a catchment';
+		this._div.innerHTML = `<h4>Simulated peak discharge per unit area (m<sup>3</sup>/s/km<sup>1.2</sup>)</h4>${contents}`;
 	};
 
 	info.addTo(map);

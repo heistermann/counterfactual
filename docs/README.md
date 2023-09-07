@@ -1,12 +1,12 @@
 This page shows preliminary results of a scenario analysis that explores the flash flood hazard in Germany. 
-To this end, we used data from the most extreme precipitation events in Germany from 2001 to 2020,
+To this end, we used data from the most extreme precipitation events in Germany from 2001 to 2021,
 and assumed that these events could have happened anywhere in Germany. Based on this assumption,
 we simulated the resulting hydrological response, specifically the peak discharge. We refer to the approach
 as a *downward counterfactual* (how could the impacts of the same rainfall event have been worse if it had hit elsewhere).
 
 The map below shows the results per federal state of Germany. 
 Please use the drop-down menu to select a different state and then hit the
-`Draw map` button to update the map.
+`Update map` button to update the map.
 
 **Please be patient, loading data may take a while...**
 
