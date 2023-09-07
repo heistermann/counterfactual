@@ -18,7 +18,7 @@ Please use the drop-down menu to select a different state and then hit the
     frameborder="0">
 </iframe>
 
-**Cite as:** Voit, P., and Heistermann, M.: Downward counterfactual analysis of historical rainfall events in Germany, https://doi.org/10.5194/egusphere-egu23-1241.
+**Cite as:** Voit, P., and Heistermann, M.: Downward counterfactual analysis of historical rainfall events in Germany, [https://doi.org/10.5194/egusphere-egu23-1241](https://doi.org/10.5194/egusphere-egu23-1241).
 
 ## Some background
 
