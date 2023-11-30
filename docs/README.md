@@ -15,10 +15,10 @@ elsewhere. Such scenario analysis is referred to as "counterfactual thinking",
 and a "downward counterfactual search" strives to identify constellations with impacts
 worse than observed for the actual event itself.
 
-Please find a comprehensive presentation of this approach in 
-[our recent preprint](https://doi.org/10.5194/egusphere-egu23-1241):
-Voit, P., and Heistermann, M.: Downward counterfactual analysis of historical rainfall 
-events in Germany, Nat. Haz. Earth Syst. Sc. Disc., in review.
+> Please find a comprehensive presentation of this approach in 
+> [our recent preprint](https://doi.org/10.5194/egusphere-egu23-1241):
+> Voit, P., and Heistermann, M.: A downward counterfactual analysis of flash 
+> floods in Germany, Nat. Haz. Earth Syst. Sc. Disc. [preprint], in review.
 
 In the map below, you can compare the **counterfactual maximum peak** to the 
 **original maximum peak** that resulted from the *actual* rainfall events 
