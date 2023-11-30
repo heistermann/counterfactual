@@ -41,8 +41,8 @@ and then hit the `Update map` button to update the map.
 
 This is the list of extreme preciptation events that were analysed:
 
-| ID       | Date               | max. 24 h prec. | federal state |
-| -------- | ------------------ | --------------- | ------------- |
+| Rainfall Event ID  | Date               | max. 24 h prec. | federal state |
+| ------------------ | ------------------ | --------------- | ------------- |
 | LS/Jul02 | Jul 15-20, 2002    | 138 | Niedersachsen |
 | BB/Jun17 | Jun 26-Jul 2, 2017 | 149 | Berlin / Brandenburg |
 | SN/Aug02 | Aug 10-15, 2002    | 224 | Sachsen |
