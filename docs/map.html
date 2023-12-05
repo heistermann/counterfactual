@@ -69,10 +69,25 @@
 <script type="text/javascript" src='san.js'></script>
 <script type="text/javascript" src='thu.js'></script>
 
+<script type="text/javascript" src='streams/nrw_streams.js'></script>
+<script type="text/javascript" src='streams/shh_streams.js'></script>
+<script type="text/javascript" src='streams/nsb_streams.js'></script>
+<script type="text/javascript" src='streams/hes_streams.js'></script>
+<script type="text/javascript" src='streams/rlp_streams.js'></script>
+<script type="text/javascript" src='streams/bwb_streams.js'></script>
+<script type="text/javascript" src='streams/bay_streams.js'></script>
+<script type="text/javascript" src='streams/saa_streams.js'></script>
+<script type="text/javascript" src='streams/bbr_streams.js'></script>
+<script type="text/javascript" src='streams/mbv_streams.js'></script>
+<script type="text/javascript" src='streams/sac_streams.js'></script>
+<script type="text/javascript" src='streams/san_streams.js'></script>
+<script type="text/javascript" src='streams/thu_streams.js'></script>
+
 
 <script type="text/javascript">
 
 	var cats = nrw;
+	var streams = nrw_streams;
 
 	const map = L.map('map').setView([51.5, 7.6], 7);
 	
@@ -135,6 +150,20 @@
 
 		info.update(layer.feature.properties);
 	}
+	
+	/* Stream layer*/
+	function styleLines(feature) {
+	    return {
+	                color: "#1a5276",
+	                weight: 3,
+	                opacity: .7,
+	                lineJoin: 'round'
+	            };
+	}
+
+	var streamlayer=L.geoJSON(streams,{ 
+		style: styleLines
+	});
 
 	var geojson = L.geoJson(cats, {
 		style,
@@ -147,30 +176,43 @@
 	function draw() {
 		if (document.getElementById('selector').value=="nrw") {
 			cats = nrw;
+			streams = nrw_streams;
 		} else if (document.getElementById('selector').value=="shh") {
 			cats = shh;
+			streams = shh_streams;
 		} else if (document.getElementById('selector').value=="nsb") {
 			cats = nsb;
+			streams = nsb_streams;
 		} else if (document.getElementById('selector').value=="hes") {
 			cats = hes;
+			streams = hes_streams;
 		} else if (document.getElementById('selector').value=="rlp") {
 			cats = rlp;
+			streams = rlp_streams;
 		} else if (document.getElementById('selector').value=="bwb") {
 			cats = bwb;
+			streams = bwb_streams;
 		} else if (document.getElementById('selector').value=="bay") {
 			cats = bay;
+			streams = bay_streams;
 		} else if (document.getElementById('selector').value=="saa") {
 			cats = saa;
+			streams = saa_streams;
 		} else if (document.getElementById('selector').value=="bbr") {
 			cats = bbr;
+			streams = bbr_streams;
 		} else if (document.getElementById('selector').value=="sac") {
 			cats = sac;
+			streams = sac_streams;
 		} else if (document.getElementById('selector').value=="san") {
 			cats = san;
+			streams = san_streams;
 		} else if (document.getElementById('selector').value=="thu") {
 			cats = thu;
+			streams = thu_streams;
 		} else {
 			cats = nrw;
+			streams = nrw_streams;
 		}
 		
 		geojson.clearLayers();
@@ -178,6 +220,10 @@
 		style,
 		onEachFeature
 		}).addTo(map);
+		streamlayer.clearLayers();
+		streamlayer=L.geoJSON(streams,{ 
+			style: styleLines
+		});
 	var bounds = geojson.getBounds();
 	var latLng = bounds.getCenter();
 	console.log(latLng);
@@ -186,6 +232,7 @@
 
 	function resetHighlight(e) {
 		geojson.resetStyle(e.target);
+		streamlayer.bringToFront();
 		info.update();
 	}
 
@@ -196,8 +243,8 @@
 	function onEachFeature(feature, layer) {
 		layer.on({
 			mouseover: highlightFeature,
-			mouseout: resetHighlight,
-			click: zoomToFeature
+			mouseout: resetHighlight
+			/*click: zoomToFeature*/
 		});
 	}
 
@@ -225,6 +272,30 @@
 	};
 
 	legend.addTo(map);
+	
+	
+
+	
+	map.on('zoom', function() {
+		
+		streamlayer.addTo(map);
+		/*console.log("add");*/
+		
+		if (map.getZoom() < 10) {
+			/*console.log("remove\n");*/
+			map.removeLayer(streamlayer);
+			/*layerGroup.remove();*/
+		}
+
+/*		if (map.getZoom() > 9) {
+			 var streamlayer=L.geoJSON(nrw_streams).addTo(map);
+		 } else {
+			 map.removeLayer(streamlayer);
+		 }
+*/
+	});
+
+
 
 
 </script>
