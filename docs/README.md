@@ -31,7 +31,7 @@ Please use the drop-down menu to select a different state
 and then hit the `Update map` button to update the map. 
 **Please be patient, loading data may take a while...**
 
-<iframe src="https://heistermann.github.io/ff-hazard/map.html"
+<iframe src="https://heistermann.github.io/counterfactual/map.html"
     width="110%"
     height="500"
     scrolling="no"
